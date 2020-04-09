@@ -1,35 +1,50 @@
 <!DOCTYPE html>
+
+
 <html>
 <head>
     <title>課題共有システム</title>
+    <script type="text/javascript">
+    window.onload = function(){
+        var subject = "オペレーティング・システム";
+        var name = "第一回の授業課題";
+        var date = "2020/4/10";
+        var file = "file.jpeg";
+        var anser = "anser.pdf";
+        document.getElementById("subject").innerHTML = subject;
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("date").innerHTML = date;
+        document.getElementById("file").innerHTML = file;
+        document.getElementById("anser").innerHTML = anser;
+    }
+    </script>
 </head>
 
 <table border="2" bordercolor="#808080">
     <tr>
-    <th bgcolor="#CBFFD3"><font color="#000000">教科名 </font></th>
+    <th bgcolor="#CBFFD3" width="500"><font color="#000000">教科名 </font></th>
     <th bgcolor="#CBFFD3" width="500"><font color="#000000">課題名</font></th>
     <th bgcolor="#CBFFD3" width="500"><font color="#000000">期限</font></th>
     <th bgcolor="#CBFFD3" width="500"><font color="#000000">ファイル</font></th>
     <th bgcolor="#CBFFD3" width="500"><font color="#000000">解答</font></th>
     </tr>
-    <script>
-
-        var myfunc = function () {
-            var subject = "オペレーティング・システム";
-            var name = "第一回授業";
-            var date = "2020/4/10";
-            var file = "オペレーティング・システム";
-            var anser = "オペレーティング・システム";
-        }
-
-      
-    </script>
     <tr>
-    <td bgcolor="#FFFFFF" align="right" nowrap></td>
-    <td bgcolor="#FFFFFF" valign="top" width="500"></td>
-    <td bgcolor="#FFFFFF" valign="top" width="500"></td>
-    <td bgcolor="#FFFFFF" valign="top" width="500"></td>
-    <td bgcolor="#FFFFFF" valign="top" width="500"></td>
+    <td bgcolor="#FFFFFF" align="top" nowrap>
+        <p id="subject"> </p>
+    </td>
+    <td bgcolor="#FFFFFF" valign="top" width="500">
+        <p id="name"> </p>
+    </td>
+    <td bgcolor="#FFFFFF" valign="top" width="500">
+        <p id="date"> </p>
+    </td>
+    
+    <td bgcolor="#FFFFFF" valign="top" width="500">
+        <p id="file"> </p>
+    </td>
+    <td bgcolor="#FFFFFF" valign="top" width="500">
+        <p id="anser"> </p>
+    </td>
     </tr>
     </table>
 
