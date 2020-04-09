@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Sample</title>
+        <!-- BootstrapのCSS読み込み -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- jQuery読み込み -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- BootstrapのJS読み込み -->
+        <!--script src="js/bootstrap.min.js"></script-->
+        <script type="text/javascript">
+          /*window.onload = function(){
+            document.getElementById("inputSubject").value = "hello";
+          }*/
+          function upload(){
+
+            var form = document.createElement("form");
+            var assignmentName = document.createElement("input");
+            var deadline = document.createElement("input");
+            var time = document.createElement("input");
+            var subject = document.createElement("input");
+
+            form.method = "POST";
+            form.action = "/upload";
+
+            assignmentName.type = "hidden";
+            deadline.type = "hidden";
+            time.type = "hidden";
+            subject.type = "hidden";
+
+            assignmentName.name = "assignmentName";
+            deadline.name = "deadline";
+            time.name = "time";
+            subject.name = "subject";
+
+            assignmentName.value = document.getElementById("inputAssignment").value;
+            deadline.value = document.getElementById("inputDatetime").value;
+            time.value = Date.now();
+            subject.value = document.getElementById("inputSubject").value;
+
+            form.appendChild(assignmentName);
+            form.appendChild(deadline);
+            form.appendChild(time);
+            form.appendChild(subject);
+
+            document.body.appendChild(form);
+
+            form.submit();
+          }
+        
+        </script>
+    </head>
+
+    <body>
+        <h1>Add Assignment</h1>
+        <table border="1">   
+        <!--form-->
+            <div class="form-group">
+              <label for="inputSubject">subject</label>
+              <br>
+              <input type="text" class="form-control" id="inputSubject" placeholder="subject">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="inputAssignment">Assignment</label>
+              <br>
+              <input type="text" class="form-control" id="inputAssignment" placeholder="assignment">
+              <br>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="inputAssignment">Deadline</label>
+                <br>
+                <input type="datetime" class="form-control" id="inputDatetime" placeholder="date">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="exampleInputFile">File input here</label>
+              <input type="file" id="inputFile">
+            </div>
+            <button type="submit" class="btn btn-default" onclick="upload();">Submit</button>
+          <!--/form-->
+    </body>
+
+</html>
