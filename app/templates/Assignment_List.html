@@ -12,12 +12,16 @@
         <!-- BootstrapのJS読み込み -->
         <!--script src="js/bootstrap.min.js"></script-->
         <script type="text/javascript">
+          /*window.onload = function(){
+            document.getElementById("inputSubject").value = "hello";
+          }*/
           function upload(){
 
             var form = document.createElement("form");
             var assignmentName = document.createElement("input");
             var deadline = document.createElement("input");
             var time = document.createElement("input");
+            var subject = document.createElement("input");
 
             form.method = "POST";
             form.action = "/upload";
@@ -25,18 +29,22 @@
             assignmentName.type = "hidden";
             deadline.type = "hidden";
             time.type = "hidden";
+            subject.type = "hidden";
 
             assignmentName.name = "assignmentName";
             deadline.name = "deadline";
             time.name = "time";
+            subject.name = "subject";
 
             assignmentName.value = document.getElementById("inputAssignment").value;
             deadline.value = document.getElementById("inputDatetime").value;
             time.value = Date.now();
+            subject.value = document.getElementById("inputSubject").value;
 
             form.appendChild(assignmentName);
             form.appendChild(deadline);
             form.appendChild(time);
+            form.appendChild(subject);
 
             document.body.appendChild(form);
 
